@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "151989012233",
+    "firebase_url": "https://fir-demo-c3243.firebaseio.com",
+    "project_id": "fir-demo-c3243",
+    "storage_bucket": "fir-demo-c3243.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151989012233:android:7b5e33cfef8b6732",
+        "android_client_info": {
+          "package_name": "com.fitmat.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151989012233-78k52gc8003efiup5dt9tlf4787uh5hn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fitmat.firebasedemo",
+            "certificate_hash": "719b3edd1e754267849c3668c74da0419cd14083"
+          }
+        },
+        {
+          "client_id": "151989012233-c526fi4q7m56t5nmri5uvorhsegc2dgv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4PQtia-38n7rWZGssULGjjWoQ9ljSHRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151989012233-c526fi4q7m56t5nmri5uvorhsegc2dgv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
