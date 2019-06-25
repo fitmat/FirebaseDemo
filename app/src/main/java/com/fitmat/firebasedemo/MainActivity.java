@@ -11,7 +11,12 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.sql.DatabaseMetaData;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
         submitData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addData();
+                try {
+                    addData();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -48,12 +57,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void addData()
-    {
+    private void addData() throws JSONException {
         long millis = System.currentTimeMillis();
         String Time = String.valueOf(millis);
 
-        String id = databaseActivities.push().getKey();
+
+
+
+
+
 
         String minX = "1500";
         String maxX = "2000";
@@ -71,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         hm.put("centre",centre);
         hm.put("length",length);
         hm.put("Width",width);
+
+
         hm.put("Min X",minX);
         hm.put("Max X",maxX);
         hm.put("Min Y",minY);
@@ -78,8 +92,47 @@ public class MainActivity extends AppCompatActivity {
         hm.put("centre",centre);
         hm.put("length",length);
         hm.put("Width",width);
+
+
+
+//        JSONObject jo = new JSONObject();
+//
+//        jo.put("firstName", "John");
+//        jo.put("lastName", "Doe");
+//
+//        JSONArray ja = new JSONArray();
+//        ja.put(jo);
+//
+//        JSONObject mainObj = new JSONObject();
+//        mainObj.put("employees", ja);
+//
+//
+        String id = databaseActivities.push().getKey();
+
+        ArrayList<HashMap> list=new ArrayList<HashMap>();
+        HashMap<String,String> hm1= new HashMap<>();
+        hm1.put("Min X",minX);
+        hm1.put("Max X",maxX);
+        hm1.put("Min Y",minY);
+        hm1.put("Max Y",maxY);
+        hm1.put("centre",centre);
+        hm1.put("length",length);
+        hm1.put("Width",width);
+
+        list.add(hm1);
+
+        hm1.put("Min X",minX);
+        hm1.put("Max X",maxX);
+        hm1.put("Min Y",minY);
+        hm1.put("Max Y",maxY);
+        hm1.put("centre",centre);
+        hm1.put("length",length);
+        hm1.put("Width",width);
+        list.add(hm1);
+
         Activites activites = new Activites(id,Time,"AAB1205465456","10","12","36",
-                "40","12","56","32","100","14","Triangle","Vertical","Jump",hm);
+                "40","12","56","32","100","14","Triangle","Vertical",
+                "Jump",list,hm);
 
         databaseActivities.child(id).setValue(activites);
 

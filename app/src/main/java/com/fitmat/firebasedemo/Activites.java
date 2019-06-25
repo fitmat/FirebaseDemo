@@ -1,9 +1,13 @@
 package com.fitmat.firebasedemo;
 
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class Activites {
+
 
 
     String userId,timestamp;
@@ -11,9 +15,27 @@ public class Activites {
     String minX,minY,maxX,maxY,size,centre,areaCovered,length,width,shape,orientation;
     String actions;
 
+
+    ArrayList<HashMap> list=new ArrayList<HashMap>();
+
     HashMap<String,String> hashMap = new HashMap<String, String>();
 
-    public Activites(String userId, String timestamp, String bufferStream, String minX, String minY, String maxX, String maxY, String size, String centre, String areaCovered, String length, String width, String shape, String orientation, String actions, HashMap<String, String> hashMap) {
+
+
+//    public JSONObject getJsonObject() {
+//        return jsonObject;
+//    }
+//
+//    public void setJsonObject(JSONObject jsonObject) {
+//        this.jsonObject = jsonObject;
+//    }
+
+
+
+//    JSONObject jsonObject = new JSONObject();
+
+    public Activites(String userId, String timestamp, String bufferStream, String minX, String minY, String maxX, String maxY, String size, String centre, String areaCovered, String length, String width,
+                     String shape, String orientation, String actions, ArrayList<HashMap> list, HashMap<String, String> hashMap) {
         this.userId = userId;
         this.timestamp = timestamp;
         this.bufferStream = bufferStream;
@@ -29,8 +51,12 @@ public class Activites {
         this.shape = shape;
         this.orientation = orientation;
         this.actions = actions;
+        this.list = list;
         this.hashMap = hashMap;
     }
+
+
+
 
 
 
